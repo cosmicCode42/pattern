@@ -4,8 +4,43 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .button {
-    width: 300px;
-    height: 300px;
-    color: black;
+    width: 200px;
+    height: 200px;
     border: 1px solid black;
+    border-radius: 100px;
+    position: relative;
+}
+
+#button1 {
+    background-color: red;
+    left: 25%;
+}
+
+#button2 {
+    background-color: yellow;
+    left: 60%;
+    bottom: 200px;
+}
+
+#button3 {
+    background-color: rgb(27, 27, 247);
+    left: 25%;
+}
+
+#button4 {
+    background-color: green;
+    left: 60%;
+    bottom: 200px;
+}
+
+#start {
+    width: 150px;
+    height: 75px;
+    border-radius: 50px;
+    background-color: #808085;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    left: 425%;
+    bottom: 100px;
 }
