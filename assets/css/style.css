@@ -38,9 +38,9 @@ h1,h2,h3,h4,h5,h6 {
     height: 75px;
     border-radius: 50px;
     background-color: #808085;
-    display: table-cell;
+    /* display: table-cell;
     vertical-align: middle;
-    text-align: center;
-    left: 420%;
+    text-align: center; */
+    left: 45%;
     bottom: 100px;
 }
