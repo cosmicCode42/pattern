@@ -6,7 +6,7 @@ h1,h2,h3,h4,h5,h6 {
 .button {
     width: 200px;
     height: 200px;
-    border: 1px solid black;
+    border: 5px outset black;
     border-radius: 100px;
     position: relative;
 }
@@ -19,7 +19,7 @@ h1,h2,h3,h4,h5,h6 {
 #button2 {
     background-color: yellow;
     left: 60%;
-    bottom: 200px;
+    bottom: 201px;
 }
 
 #button3 {
@@ -30,7 +30,7 @@ h1,h2,h3,h4,h5,h6 {
 #button4 {
     background-color: green;
     left: 60%;
-    bottom: 200px;
+    bottom: 201px;
 }
 
 #start {
@@ -41,6 +41,6 @@ h1,h2,h3,h4,h5,h6 {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
-    left: 425%;
+    left: 420%;
     bottom: 100px;
 }
