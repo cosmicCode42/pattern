@@ -4,7 +4,7 @@
 
 jest.spyOn(window, "alert").mockImplementation(() => {})
 
-const { gameStuff } = require("../game")
+const { gameStuff, newGame } = require("../script")
 
 beforeAll(() => {
     let fs = require("fs");
