@@ -19,13 +19,13 @@ let gameStuff = {
 
 const newGame = () => {
     /* When a new game is started, we want to:
-        - hide the Start Game button <= here
+        - hide the Start Game button (DONE)
         - begin a random pattern
         - begin with a speed of 400? ms
 
         - reset score (DONE)
         - reset playerInput (DONE)
-        - reset currentGame
+        - reset currentGame (DONE)
     */
 
     // resets the score, playerInput and currentGame
