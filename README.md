@@ -55,3 +55,5 @@ As a user of the site, I want:
 ### Bugfixes
 - **Problem:** There was a mass of unneeded whitespace at the bottom of the page.
 	- **Solution:** Initially I had just used divs with relative positioning stacked atop each other, shifting their positions with the ``left`` and ``top`` css attributes. To fix the whitespace issue, I wrapped each 'row' of buttons in a ``container`` div (the ``start`` button has its own ``start-container``) and used ``float: inline-start`` to position them within the rows.
+- **Problem:** Jest does not recognise jQuery syntax.
+	- **Solution:** Stil working on this. Apparently I have to install jQuery separately using ``npm``, which is annoying.
