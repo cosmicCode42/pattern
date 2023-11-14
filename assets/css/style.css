@@ -32,6 +32,10 @@ h1,h2,h3,h4,h5,h6 {
     opacity: 0.6;
 }
 
+.clicked {
+    border: 5px inset black;
+}
+
 #button1 {
     background-color: red;
     left: 25%;

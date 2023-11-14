@@ -23,8 +23,8 @@ let gameStuff = {
 const newGame = () => {
     /* When a new game is started, we want to:
         - hide the Start Game button (DONE)
-        - begin a random pattern
-        - begin with a speed of 400? ms
+        - begin a random pattern (DONE)
+        - begin with a speed of 400 ms flashes with 800 ms intervals (DONE)
 
         - reset score (DONE)
         - reset playerInput (DONE)
@@ -43,13 +43,23 @@ const newGame = () => {
     // $("#start").hide('medium');
 
     // begins a random pattern
+    nextTurn();
+};
+
+const nextTurn = () => {
+    // resets player's moves and shows a random pattern
+
+    // reset player's moves
+    playerInput = [];
+
+    //generates random pattern
     for (let n = 0; n < gameStuff.patternCount; n++) {
         let patternBit = Math.floor(Math.random() * gameStuff.buttons.length);
         gameStuff.currentPat.push(gameStuff.buttons[patternBit]);
     };
 
-    showTurn();
-};
+    showTurn(); // this shows the pattern to the player
+}
 
 const lightUp = node => {
     // causes buttons to light up during play
@@ -72,7 +82,7 @@ const showTurn = () => {
 };
 
 const lengthUp = () => {
-    // this SHOULDD increase the length every 4 patterns, to a maximum of 8.
+    // this SHOULD increase the length every 4 patterns, to a maximum of 8.
     if (gameStuff.turnCount % 4 === 0 && gameStuff.patternCount < 8) {
         gameStuff.patternCount++;
     };
@@ -92,6 +102,11 @@ const speedUp = () => {
     };
 };
 
+const playerTurn = () => {
+    // needs to record player's input, check it against the current pattern, continue on success and abort on failure
+    x
+};
+
 // While testing, we'll add a way of showing the Start Game button again. We'll use the main header.
 // $("h1").on("click", function() {
 //     $("#start").show('medium');
@@ -99,5 +114,7 @@ const speedUp = () => {
 
 module.exports = {
     gameStuff,
-    newGame
+    newGame,
+    showTurn,
+    playerTurn
 }; // testing, testing...
