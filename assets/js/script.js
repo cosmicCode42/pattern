@@ -52,8 +52,7 @@ const newGame = () => {
                     gameStuff.lastButton = move;
                     clickNode(move);
                     gameStuff.playerInput.push(move);
-                    console.log(move);
-                    // playerTurn();
+                    playerTurn();
                 };
             });
             node.setAttribute("data-listener", "true");
