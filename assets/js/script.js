@@ -2,6 +2,8 @@
 // A simple pattern game. Currently planning 4 buttons pressed in order on the screen.
 // Idea: make patterns flash increasingly more quickly as time goes on [to a maximum speed]. Start at 400 ms; end at 100 ms?
 // Idea: increase pattern length as time goes on. Start at 3; end at 8?
+// Idea: every 4 patterns, increase pattern length by 1.
+// Idea: every 7 patterns, increase speed of flashes (-50ms lightTime, -100ms turnTime).
 // Idea: reset pattern length with each increase in speed. <= This will be a separate mode.
 
 let gameStuff = {
@@ -9,10 +11,11 @@ let gameStuff = {
     //patternCount starts at 3 because that's the default starting pattern length.
     score: 0,
     buttons: ['button1', 'button2', 'button3', 'button4'],
-    currentGame: [],
+    currentPat: [],
     playerInput: [],
     patternCount: 3,
-    turnTime: 400,
+    lightTime: 400,
+    turnTime: 800,
     turnCount: 0,
     lastButton: "",
     turnInProgress: false,
@@ -29,23 +32,24 @@ const newGame = () => {
         - reset currentGame (DONE)
     */
 
-    // resets the score, time interval, turn count, playerInput and currentGame
+    // resets the score, time interval (for flashes and between flashes), turn count, playerInput and currentGame
     gameStuff.score = 0;
-    gameStuff.turnTime = 400;
+    gameStuff.lightTime = 400;
+    gameStuff.turnTime = 800;
     gameStuff.turnCount = 0;
     gameStuff.playerInput = [];
-    gameStuff.currentGame = [];
+    gameStuff.currentPat = [];
 
     // hide the Start Game button after clicking it
-    $("#start").hide('medium');
+    // $("#start").hide('medium');
 
     // begins a random pattern
     for (let n = 0; n < gameStuff.patternCount; n++) {
         let patternBit = Math.floor(Math.random() * gameStuff.buttons.length);
-        gameStuff.currentGame.push(gameStuff.buttons[patternBit]);
+        gameStuff.currentPat.push(gameStuff.buttons[patternBit]);
     };
 
-    console.log(gameStuff.currentGame);
+    showTurn();
 };
 
 const lightUp = node => {
@@ -53,12 +57,21 @@ const lightUp = node => {
     document.getElementById(node).classList.add("light");
     setTimeout(() => {
         document.getElementById(node).classList.remove("light");
-    }, gameStuff.turnTime); // removes light up after interval set in turnTime
+    }, gameStuff.lightTime); // removes light up after interval set in turnTime
+};
+
+const showTurn = () => {
+    // this shows the current pattern on the computer's turn
+    let seqPlace = 0;
+    let sequence = setInterval(() => {
+        lightUp(gameStuff.currentPat[seqPlace]);
+        seqPlace++;
+    }, gameStuff.turnTime);
 };
 
 // While testing, we'll add a way of showing the Start Game button again. We'll use the main header.
-$("h1").on("click", function() {
-    $("#start").show('medium');
-})
+// $("h1").on("click", function() {
+//     $("#start").show('medium');
+// })
 
 module.exports = { gameStuff, newGame }; // testing, testing...
