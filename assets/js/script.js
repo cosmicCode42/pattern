@@ -1,4 +1,3 @@
-
 // A simple pattern game. Currently planning 4 buttons pressed in order on the screen.
 // Idea: make patterns flash increasingly more quickly as time goes on [to a maximum speed]. Start at 400 ms; end at 100 ms?
 // Idea: increase pattern length as time goes on. Start at 3; end at 8?
@@ -66,6 +65,9 @@ const showTurn = () => {
     let sequence = setInterval(() => {
         lightUp(gameStuff.currentPat[seqPlace]);
         seqPlace++;
+        if (seqPlace >= gameStuff.currentPat.length) {
+            clearInterval(sequence);
+        };
     }, gameStuff.turnTime);
 };
 
@@ -95,4 +97,7 @@ const speedUp = () => {
 //     $("#start").show('medium');
 // })
 
-module.exports = { gameStuff, newGame }; // testing, testing...
+module.exports = {
+    gameStuff,
+    newGame
+}; // testing, testing...
