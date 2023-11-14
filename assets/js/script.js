@@ -69,6 +69,27 @@ const showTurn = () => {
     }, gameStuff.turnTime);
 };
 
+const lengthUp = () => {
+    // this SHOULDD increase the length every 4 patterns, to a maximum of 8.
+    if (gameStuff.turnCount % 4 === 0 && gameStuff.patternCount < 8) {
+        gameStuff.patternCount++;
+    };
+};
+
+const speedUp = () => {
+    // this SHOULD reduce the time between flashes every 7 patterns.
+    if (gameStuff.turnCount % 7 === 0) {
+        // First we reduce the flash time, to a minimum time.
+        if (gameStuff.lightTime > 100) {
+            gameStuff.lightTime = gameStuff.lightTime - 50;
+        };
+        // Then we reduce the time between flashes, to a minimum time.
+        if (gameStuff.turnTime > 200) {
+            gameStuff.turnTime = gameStuff.turnTime - 100;
+        };
+    };
+};
+
 // While testing, we'll add a way of showing the Start Game button again. We'll use the main header.
 // $("h1").on("click", function() {
 //     $("#start").show('medium');
