@@ -42,7 +42,6 @@ const newGame = () => {
     // hide the Start Game button after clicking it
     // $("#start").hide('medium');
 
-
     // start the game. This entire part was copied from the Simon game codealong challenge () and edited for my purposes.
     for (let node of document.getElementsByClassName("node")) {
         if (node.getAttribute("data-listener") !== "true") {
