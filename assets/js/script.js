@@ -12,6 +12,7 @@ let gameStuff = {
     currentGame: [],
     playerInput: [],
     patternCount: 3,
+    turnTime: 400,
     turnCount: 0,
     lastButton: "",
     turnInProgress: false,
@@ -28,13 +29,31 @@ const newGame = () => {
         - reset currentGame (DONE)
     */
 
-    // resets the score, playerInput and currentGame
+    // resets the score, time interval, turn count, playerInput and currentGame
     gameStuff.score = 0;
+    gameStuff.turnTime = 400;
+    gameStuff.turnCount = 0;
     gameStuff.playerInput = [];
     gameStuff.currentGame = [];
 
     // hide the Start Game button after clicking it
     $("#start").hide('medium');
+
+    // begins a random pattern
+    for (let n = 0; n < gameStuff.patternCount; n++) {
+        let patternBit = Math.floor(Math.random() * gameStuff.buttons.length);
+        gameStuff.currentGame.push(gameStuff.buttons[patternBit]);
+    };
+
+    console.log(gameStuff.currentGame);
+};
+
+const lightUp = node => {
+    // causes buttons to light up during play
+    document.getElementById(node).classList.add("light");
+    setTimeout(() => {
+        document.getElementById(node).classList.remove("light");
+    }, gameStuff.turnTime); // removes light up after interval set in turnTime
 };
 
 // While testing, we'll add a way of showing the Start Game button again. We'll use the main header.

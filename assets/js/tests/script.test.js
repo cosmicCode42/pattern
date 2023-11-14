@@ -30,6 +30,9 @@ describe("gameStuff object contains correct keys", () => {
     test("patternCount key exists", () => {
         expect("patternCount" in gameStuff).toBe(true);
     });
+    test("turnTime key exists", () => {
+        expect("turnTime" in gameStuff).toBe(true);
+    });
     test("turnCount key exists", () => {
         expect("turnCount" in gameStuff).toBe(true);
     });
