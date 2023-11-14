@@ -42,7 +42,24 @@ const newGame = () => {
     // hide the Start Game button after clicking it
     // $("#start").hide('medium');
 
-    // begins a random pattern
+
+    // start the game. This entire part was copied from the Simon game codealong challenge () and edited for my purposes.
+    for (let node of document.getElementsByClassName("node")) {
+        if (node.getAttribute("data-listener") !== "true") {
+            node.addEventListener("click", (e) => {
+                if (gameStuff.currentPat.length > 0) {
+                // && !game.turnInProgress) { makes sure a game has started and the computer's turn is not in progress
+                    let move = e.target.getAttribute("id"); // your player's move; each click is 1
+                    gameStuff.lastButton = move;
+                    clickNode(move);
+                    gameStuff.playerInput.push(move);
+                    console.log(move);
+                    // playerTurn();
+                };
+            });
+            node.setAttribute("data-listener", "true");
+        }
+    }
     nextTurn();
 };
 
@@ -64,8 +81,10 @@ const nextTurn = () => {
 const lightUp = node => {
     // causes buttons to light up during play
     document.getElementById(node).classList.add("light");
+    document.getElementById(node).classList.add("clicked");
     setTimeout(() => {
         document.getElementById(node).classList.remove("light");
+        document.getElementById(node).classList.remove("clicked");
     }, gameStuff.lightTime); // removes light up after interval set in turnTime
 };
 
@@ -79,6 +98,16 @@ const showTurn = () => {
             clearInterval(sequence);
         };
     }, gameStuff.turnTime);
+};
+
+const clickNode = node => {
+    // this has each button react to being clicked
+    document.getElementById(node).classList.add("light");
+    document.getElementById(node).classList.add("clicked");
+    setTimeout(() => {
+        document.getElementById(node).classList.remove("light");
+        document.getElementById(node).classList.remove("clicked");
+    }, 100);
 };
 
 const lengthUp = () => {
@@ -104,7 +133,7 @@ const speedUp = () => {
 
 const playerTurn = () => {
     // needs to record player's input, check it against the current pattern, continue on success and abort on failure
-    x
+    console.log()
 };
 
 // While testing, we'll add a way of showing the Start Game button again. We'll use the main header.
