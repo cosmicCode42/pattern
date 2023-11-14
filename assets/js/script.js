@@ -131,7 +131,8 @@ const speedUp = () => {
 
 const playerTurn = () => {
     // needs to record player's input, check it against the current pattern, continue on success and abort on failure
-    console.log()
+    // also calls lengthUp and speedUp, so it needs to increment the turn counter each time the player is correct.
+    console.log(gameStuff.playerInput);
 };
 
 // While testing, we'll add a way of showing the Start Game button again. We'll use the main header.
