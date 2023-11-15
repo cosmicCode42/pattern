@@ -1,7 +1,11 @@
+/* ---------------- headers */
+
 h1,h2,h3,h4,h5,h6 {
     text-align: center;
     padding: 1rem;
 }
+
+/* ---------------- buttons */
 
 .container, .start-container {
     position: static;
@@ -25,7 +29,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .node:hover, #start:hover  {
-    opacity: 0.75;
+    opacity: 0.85;
 }
 
 .light {

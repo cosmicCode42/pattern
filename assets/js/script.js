@@ -43,7 +43,7 @@ const newGame = () => {
     gameReset(); // this resets the game state.
 
     // hide the Start Game button after clicking it
-    // $("#start").hide('medium');
+    $("#start").hide('medium');
 
     // start the game. This entire part was copied from the Simon game codealong challenge () and edited for my purposes.
     for (let node of document.getElementsByClassName("node")) {
@@ -156,14 +156,9 @@ const playerTurn = () => {
         // if the player does not get to the end of the sequence, pull up an alert and reset the game state
         alert("BZZT. From the top.");
         gameReset();
-        // $("#start").show('medium'); <= this will resummon the button.
+        $("#start").show('medium'); // <= this will resummon the button.
     };
 };
-
-// While testing, we'll add a way of showing the Start Game button again. We'll use the main header.
-// $("h1").on("click", function() {
-//     $("#start").show('medium');
-// })
 
 module.exports = {
     gameStuff,
