@@ -55,5 +55,9 @@ As a user of the site, I want:
 ### Bugfixes
 - **Problem:** There was a mass of unneeded whitespace at the bottom of the page.
 	- **Solution:** Initially I had just used divs with relative positioning stacked atop each other, shifting their positions with the ``left`` and ``top`` css attributes. To fix the whitespace issue, I wrapped each 'row' of buttons in a ``container`` div (the ``start`` button has its own ``start-container``) and used ``float: inline-start`` to position them within the rows.
+- **Problem:** Found an issue where the new pattern was added to (instead of replacing) the old pattern, and player's new input was being added to the old input.
+	- **Solution:** in the ``nextTurn()`` function that handles each new turn, I had not reset both the player's input ``playerInput`` and the current pattern ``currentPat`` properly. I added ``currentPat = [];`` to reset the current pattern.f
+	- **Problem:** New pattern still being added to old pattern; new player input still being added to old player input.
+		- **Solution:** ``playerInput`` and ``currentPat`` are keys in the ``gameStuff`` object, which I wasn't actually keeping in mind. Changed code to reset ``gameStuff.playerInput`` and ``gameStuff.currentPat``.
 - **Problem:** Jest does not recognise jQuery syntax.
 	- **Solution:** Stil working on this. Apparently I have to install jQuery separately using ``npm``, which is annoying.
