@@ -20,24 +20,27 @@ let gameStuff = {
     turnInProgress: false,
 };
 
-const newGame = () => {
-    /* When a new game is started, we want to:
-        - hide the Start Game button (DONE)
-        - begin a random pattern (DONE)
-        - begin with a speed of 400 ms flashes with 800 ms intervals (DONE)
-
-        - reset score (DONE)
-        - reset playerInput (DONE)
-        - reset currentGame (DONE)
-    */
-
-    // resets the score, time interval (for flashes and between flashes), turn count, playerInput and currentGame
+const gameReset = () => {
+    /* resets the score, time interval (for flashes and between flashes), turn count,
+     pattern length, playerInput and current pattern */
     gameStuff.score = 0;
     gameStuff.lightTime = 400;
     gameStuff.turnTime = 800;
     gameStuff.turnCount = 0;
+    gameStuff.patternCount = 3;
     gameStuff.playerInput = [];
     gameStuff.currentPat = [];
+};
+
+const newGame = () => {
+    /* When a new game is started, we want to:
+        - reset all variables (DONE with the gameReset function)
+        - hide the Start Game button (DONE)
+        - begin a random pattern (DONE)
+        - begin with a speed of 400 ms flashes with 800 ms intervals (DONE)
+    */
+
+    gameReset(); // this resets the game state.
 
     // hide the Start Game button after clicking it
     // $("#start").hide('medium');
@@ -74,7 +77,7 @@ const nextTurn = () => {
     };
 
     showTurn(); // this shows the pattern to the player
-}
+};
 
 const lightUp = node => {
     // causes buttons to light up during play
@@ -130,9 +133,25 @@ const speedUp = () => {
 };
 
 const playerTurn = () => {
-    // needs to record player's input, check it against the current pattern, continue on success and abort on failure
+    // needs to check player's input against the current pattern, continue on success and abort on failure
     // also calls lengthUp and speedUp, so it needs to increment the turn counter each time the player is correct.
-    console.log(gameStuff.playerInput);
+
+    // get last move from playerMoves
+    let i =  game.playerMoves.length - 1;
+    // if the playerMoves gets to the end of the sequence, the player has succeeded. increment the score
+    if (game.currentGame[i] === game.playerMoves[i] ){
+        if (game.currentGame.length === game.playerMoves.length) {
+            game.score++;
+            nextTurn();
+            lengthUp();
+            speedUp();
+        };
+    } else { 
+        // if the player does not get to the end of the sequence, pull up an alert and reset the game state
+        alert("BZZT. From the top.");
+        gameReset();
+        // $("#start").show('medium'); <= this will resummon the button.
+    };
 };
 
 // While testing, we'll add a way of showing the Start Game button again. We'll use the main header.
@@ -142,7 +161,10 @@ const playerTurn = () => {
 
 module.exports = {
     gameStuff,
+    gameReset,
     newGame,
     showTurn,
+    lengthUp,
+    speedUp,
     playerTurn
 }; // testing, testing...
