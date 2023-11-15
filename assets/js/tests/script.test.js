@@ -4,7 +4,15 @@
 
 jest.spyOn(window, "alert").mockImplementation(() => {})
 
-const { gameStuff, newGame, showTurn, playerTurn } = require("../script")
+const { 
+    gameStuff,
+    gameReset,
+    newGame,
+    nextTurn,
+    showTurn,
+    lengthUp,
+    speedUp,
+    playerTurn } = require("../script")
 
 beforeAll(() => {
     let fs = require("fs");
@@ -73,6 +81,29 @@ describe("newGame is functioning properly", () => {
     });
 });
 
-// describe("gameplay is functioning properly", () => {
-//     x
-// })
+describe("gameplay is functioning properly", () => {
+    beforeAll(() => {
+        gameStuff.patternCount = 7;
+        gameStuff.currentPat = [4, 6, 1, 7, 2, 3, 5];
+        gameStuff.playerInput = [4, 6, 1, 7, 2, 3, 5];
+        gameStuff.lightTime = 200;
+        gameStuff.turnTime = 400;
+        gameStuff.turnCount = 27;
+        playerTurn(); 
+    }); // this should check that both speedUp and lengthUp are working; 28 is a multiple of 4 and 7.
+    test("turnCount should be incremented", () => {
+        expect(gameStuff.turnCount).toEqual(28);
+    });
+    test("patternCount should be incremented", () => {
+        expect(gameStuff.patternCount).toEqual(8);
+    });
+    test("currentPat length should be equal to patternCount", () => {
+        expect(gameStuff.currentPat.length).toEqual(gameStuff.patternCount);
+    });
+    test("lightTime should be reduced by 50", () => {
+        expect(gameStuff.lightTime).toEqual(150);
+    });
+    test("turnTime should be reduced by 100", () => {
+        expect(gameStuff.turnTime).toEqual(300);
+    });
+})

@@ -59,16 +59,17 @@ const newGame = () => {
                 };
             });
             node.setAttribute("data-listener", "true");
-        }
-    }
+        };
+    };
     nextTurn();
 };
 
 const nextTurn = () => {
-    // resets player's moves and shows a random pattern
+    // resets player's moves and current pattern and shows a new, random pattern
 
-    // reset player's moves
-    playerInput = [];
+    // reset player's moves and current pattern
+    gameStuff.playerInput = [];
+    gameStuff.currentPat = [];
 
     //generates random pattern
     for (let n = 0; n < gameStuff.patternCount; n++) {
@@ -132,19 +133,24 @@ const speedUp = () => {
     };
 };
 
+// the base code was copied from the Simon codealong challenge () and edited for my purposes.
 const playerTurn = () => {
     // needs to check player's input against the current pattern, continue on success and abort on failure
     // also calls lengthUp and speedUp, so it needs to increment the turn counter each time the player is correct.
 
-    // get last move from playerMoves
-    let i =  game.playerMoves.length - 1;
-    // if the playerMoves gets to the end of the sequence, the player has succeeded. increment the score
-    if (game.currentGame[i] === game.playerMoves[i] ){
-        if (game.currentGame.length === game.playerMoves.length) {
-            game.score++;
-            nextTurn();
+    // get last move from playerInput
+    let i =  gameStuff.playerInput.length - 1;
+    /* if the playerInput gets to the end of the sequence, the player has succeeded. We need to:
+     - increment the turn count
+     - check if enough turns have passed for the pattern length to increase; increase length if so
+     - check if enough turns have passed for the speed to increase; increase speed (reduce intervals) if so
+     - add the next turn */
+    if (gameStuff.currentPat[i] === gameStuff.playerInput[i] ){
+        if (gameStuff.currentPat.length === gameStuff.playerInput.length) {
+            gameStuff.turnCount++;
             lengthUp();
             speedUp();
+            nextTurn();
         };
     } else { 
         // if the player does not get to the end of the sequence, pull up an alert and reset the game state
@@ -163,6 +169,7 @@ module.exports = {
     gameStuff,
     gameReset,
     newGame,
+    nextTurn,
     showTurn,
     lengthUp,
     speedUp,
