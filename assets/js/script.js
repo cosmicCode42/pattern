@@ -90,12 +90,14 @@ const lightUp = node => {
 
 const showTurn = () => {
     // this shows the current pattern on the computer's turn
+    gameStuff.turnInProgress = true;
     let seqPlace = 0;
     let sequence = setInterval(() => {
         lightUp(gameStuff.currentPat[seqPlace]);
         seqPlace++;
         if (seqPlace >= gameStuff.currentPat.length) {
             clearInterval(sequence);
+            gameStuff.turnInProgress = false;
         };
     }, gameStuff.turnTime);
 };
@@ -105,7 +107,7 @@ const clickNode = node => {
     document.getElementById(node).classList.add("light", "clicked");
     setTimeout(() => {
         document.getElementById(node).classList.remove("light", "clicked");
-    }, 100);
+    }, 150);
 };
 
 const lengthUp = () => {

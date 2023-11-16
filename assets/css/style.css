@@ -28,7 +28,7 @@ h1,h2,h3,h4,h5,h6 {
     float: inline-start;
 }
 
-.node:hover, #start:hover  {
+#start:hover  {
     opacity: 0.85;
 }
 
