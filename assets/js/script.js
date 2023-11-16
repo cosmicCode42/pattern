@@ -49,8 +49,8 @@ const newGame = () => {
     for (let node of document.getElementsByClassName("node")) {
         if (node.getAttribute("data-listener") !== "true") {
             node.addEventListener("click", (e) => {
-                if (gameStuff.currentPat.length > 0) {
-                // && !game.turnInProgress) { makes sure a game has started and the computer's turn is not in progress
+                if (gameStuff.currentPat.length > 0 && !gameStuff.turnInProgress) {
+                //makes sure a game has started and the computer's turn is not in progress
                     let move = e.target.getAttribute("id"); // your player's move; each click is 1
                     gameStuff.lastButton = move;
                     clickNode(move);
