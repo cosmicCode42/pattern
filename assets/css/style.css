@@ -32,14 +32,6 @@ h1,h2,h3,h4,h5,h6 {
     opacity: 0.85;
 }
 
-.light {
-    opacity: 0.6;
-}
-
-.clicked {
-    border: 5px inset black;
-}
-
 #button1 {
     background-color: red;
     left: 25%;
@@ -67,4 +59,14 @@ h1,h2,h3,h4,h5,h6 {
     background-color: #808085;
     left: 16%;
     top: 30%;
+}
+
+/* ---------------- button reactiveness */
+
+.light {
+    opacity: 0.35;
+}
+
+.clicked {
+    border: 5px inset black;
 }

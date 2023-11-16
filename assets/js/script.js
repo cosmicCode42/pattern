@@ -82,11 +82,9 @@ const nextTurn = () => {
 
 const lightUp = node => {
     // causes buttons to light up during play
-    document.getElementById(node).classList.add("light");
-    document.getElementById(node).classList.add("clicked");
+    document.getElementById(node).classList.add("light", "clicked");
     setTimeout(() => {
-        document.getElementById(node).classList.remove("light");
-        document.getElementById(node).classList.remove("clicked");
+        document.getElementById(node).classList.remove("light", "clicked");
     }, gameStuff.lightTime); // removes light up after interval set in turnTime
 };
 
@@ -104,11 +102,9 @@ const showTurn = () => {
 
 const clickNode = node => {
     // this has each button react to being clicked
-    document.getElementById(node).classList.add("light");
-    document.getElementById(node).classList.add("clicked");
+    document.getElementById(node).classList.add("light", "clicked");
     setTimeout(() => {
-        document.getElementById(node).classList.remove("light");
-        document.getElementById(node).classList.remove("clicked");
+        document.getElementById(node).classList.remove("light", "clicked");
     }, 100);
 };
 
