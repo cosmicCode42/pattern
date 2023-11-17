@@ -17,8 +17,7 @@ const gameConfig = {
 };
 
 /**
- * Resets the game state; score, time interval (for flashes and between flashes), turn count,
- * pattern length, playerInput and current pattern
+ * Resets the game state.
  */
 const gameReset = () => {
     gameConfig.score = 0;
