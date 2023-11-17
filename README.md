@@ -14,7 +14,7 @@ Second Milestone Project for the Web Development course offered by Code Institut
 5. [Deployment](#deployment)
 6. [Credit](#credit) -->
 
-**Technologies Used:** HTML5, CSS3, JavaScript; jQuery.
+**Technologies Used:** HTML5, CSS3, JavaScript.
 
 ## UX
 ...
