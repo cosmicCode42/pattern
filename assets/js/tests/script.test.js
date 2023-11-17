@@ -5,7 +5,7 @@
 jest.spyOn(window, "alert").mockImplementation(() => {})
 
 const { 
-    gameStuff,
+    gameConfig,
     gameReset,
     newGame,
     nextTurn,
@@ -22,88 +22,88 @@ beforeAll(() => {
     document.close();
 });
 
-describe("gameStuff object contains correct keys", () => {
+describe("gameConfig object contains correct keys", () => {
     test("score key exists", () => {
-        expect("score" in gameStuff).toBe(true);
+        expect("score" in gameConfig).toBe(true);
     });
     test("buttons key exists", () => {
-        expect("buttons" in gameStuff).toBe(true);
+        expect("buttons" in gameConfig).toBe(true);
     });
     test("currentPat key exists", () => {
-        expect("currentPat" in gameStuff).toBe(true);
+        expect("currentPat" in gameConfig).toBe(true);
     });
     test("playerInput key exists", () => {
-        expect("playerInput" in gameStuff).toBe(true);
+        expect("playerInput" in gameConfig).toBe(true);
     });
     test("patternCount key exists", () => {
-        expect("patternCount" in gameStuff).toBe(true);
+        expect("patternCount" in gameConfig).toBe(true);
     });
     test("lightTime key exists", () => {
-        expect("lightTime" in gameStuff).toBe(true);
+        expect("lightTime" in gameConfig).toBe(true);
     });
     test("turnTime key exists", () => {
-        expect("turnTime" in gameStuff).toBe(true);
+        expect("turnTime" in gameConfig).toBe(true);
     });
     test("turnCount key exists", () => {
-        expect("turnCount" in gameStuff).toBe(true);
+        expect("turnCount" in gameConfig).toBe(true);
     });
     test("lastButton key exists", () => {
-        expect("lastButton" in gameStuff).toBe(true);
+        expect("lastButton" in gameConfig).toBe(true);
     });
     test("turnInProgress key exists", () => {
-        expect("turnInProgress" in gameStuff).toBe(true);
+        expect("turnInProgress" in gameConfig).toBe(true);
     });
 });
 
 describe("newGame is functioning properly", () => {
     beforeAll(() => {
-        gameStuff.score = 25;
-        gameStuff.currentPat = [4, 6, 1, 7, 2];
-        gameStuff.playerInput = [1, 5, 2, 5, 4];
-        gameStuff.lightTime = 100;
-        gameStuff.turnTime = 300;
+        gameConfig.score = 25;
+        gameConfig.currentPat = [4, 6, 1, 7, 2];
+        gameConfig.playerInput = [1, 5, 2, 5, 4];
+        gameConfig.lightTime = 100;
+        gameConfig.turnTime = 300;
         newGame();
     });
     test("score should be reset", () => {
-        expect(gameStuff.score).toEqual(0);
+        expect(gameConfig.score).toEqual(0);
     });
     test("playerInput should be reset", () => {
-        expect(gameStuff.playerInput.length).toEqual(0);
+        expect(gameConfig.playerInput.length).toEqual(0);
     });
     test("starting pattern [currentPat] should have a length of 3", () => {
-        expect(gameStuff.currentPat.length).toEqual(3);
+        expect(gameConfig.currentPat.length).toEqual(3);
     });
     test("time of flashes should be reset", () => {
-        expect(gameStuff.lightTime).toEqual(400);
+        expect(gameConfig.lightTime).toEqual(400);
     });
     test("time between flashes should be reset", () => {
-        expect(gameStuff.turnTime).toEqual(800);
+        expect(gameConfig.turnTime).toEqual(800);
     });
 });
 
 describe("gameplay is functioning properly", () => {
     beforeAll(() => {
-        gameStuff.patternCount = 7;
-        gameStuff.currentPat = [4, 6, 1, 7, 2, 3, 5];
-        gameStuff.playerInput = [4, 6, 1, 7, 2, 3, 5];
-        gameStuff.lightTime = 200;
-        gameStuff.turnTime = 400;
-        gameStuff.turnCount = 27;
+        gameConfig.patternCount = 7;
+        gameConfig.currentPat = [4, 6, 1, 7, 2, 3, 5];
+        gameConfig.playerInput = [4, 6, 1, 7, 2, 3, 5];
+        gameConfig.lightTime = 200;
+        gameConfig.turnTime = 400;
+        gameConfig.turnCount = 27;
         playerTurn(); 
     }); // this should check that both speedUp and lengthUp are working; 28 is a multiple of 4 and 7.
     test("turnCount should be incremented", () => {
-        expect(gameStuff.turnCount).toEqual(28);
+        expect(gameConfig.turnCount).toEqual(28);
     });
     test("patternCount should be incremented", () => {
-        expect(gameStuff.patternCount).toEqual(8);
+        expect(gameConfig.patternCount).toEqual(8);
     });
     test("currentPat length should be equal to patternCount", () => {
-        expect(gameStuff.currentPat.length).toEqual(gameStuff.patternCount);
+        expect(gameConfig.currentPat.length).toEqual(gameConfig.patternCount);
     });
     test("lightTime should be reduced by 50", () => {
-        expect(gameStuff.lightTime).toEqual(150);
+        expect(gameConfig.lightTime).toEqual(150);
     });
     test("turnTime should be reduced by 100", () => {
-        expect(gameStuff.turnTime).toEqual(300);
+        expect(gameConfig.turnTime).toEqual(300);
     });
 })
