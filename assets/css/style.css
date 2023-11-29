@@ -5,6 +5,11 @@ h1,h2,h3,h4,h5,h6 {
     padding: 1rem;
 }
 
+.heading-container {
+    position: static;
+    height: 50px;
+}
+
 /* ---------------- buttons */
 
 .container, .start-container {
@@ -32,22 +37,22 @@ h1,h2,h3,h4,h5,h6 {
     opacity: 0.85;
 }
 
-#button1 {
+#button-red {
     background-color: red;
     left: 25%;
 }
 
-#button2 {
+#button-yellow {
     background-color: yellow;
     left: 45%;
 }
 
-#button3 {
+#button-blue {
     background-color: rgb(27, 27, 247);
     left: 25%;
 }
 
-#button4 {
+#button-green {
     background-color: green;
     left: 45%;
 }

@@ -5,7 +5,7 @@ const listOfNodes = Array.from(document.querySelectorAll('.node'));
  */
 const gameConfig = {
     score: 0,
-    buttons: ['button1', 'button2', 'button3', 'button4'],
+    buttons: ['button-red', 'button-yellow', 'button-green', 'button-blue'],
     currentPat: [],
     playerInput: [],
     patternCount: 3,
