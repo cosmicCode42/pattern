@@ -13,7 +13,7 @@ const gameConfig = {
     patternCount: 3,
     lightTime: 400,
     turnTime: 800,
-    turnCount: 0,
+    turnCount: 1,
     lastButton: "",
     turnInProgress: false,
 };
@@ -25,7 +25,7 @@ const gameReset = () => {
     gameConfig.score = 0;
     gameConfig.lightTime = 400;
     gameConfig.turnTime = 800;
-    gameConfig.turnCount = 0;
+    gameConfig.turnCount = 1;
     gameConfig.patternCount = 3;
     gameConfig.playerInput = [];
     gameConfig.currentPat = [];
@@ -111,7 +111,7 @@ const clickNode = node => {
 };
 
 /**
- * Increase the pattern length every 4 patterns, to a maximum of 8.
+ * Increase the pattern length every 4th pattern, to a maximum of 8.
  */
 const lengthUp = () => {
     if (gameConfig.turnCount % 4 === 0 && gameConfig.patternCount < 8) {
@@ -120,7 +120,7 @@ const lengthUp = () => {
 };
 
 /**
- * Reduces the time of flashes and time between flashes every 7 patterns.
+ * Reduces the time of flashes and time between flashes every 7th pattern.
  */
 const speedUp = () => {
     if (gameConfig.turnCount % 7 === 0) {

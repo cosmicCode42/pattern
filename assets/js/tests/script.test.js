@@ -55,6 +55,39 @@ describe("gameConfig object contains correct keys", () => {
     });
 });
 
+describe("gameConfig object contains correct intial values", () => {
+    test("score key initial value is correct", () => {
+        expect(gameConfig.score).toBe(0);
+    });
+    test("buttons key array is accurate", () => {
+        expect(gameConfig.buttons).toStrictEqual(['button-red', 'button-yellow', 'button-green', 'button-blue']);
+    });
+    test("currentPat array is empty", () => {
+        expect(gameConfig.currentPat.length).toBe(0);
+    });
+    test("playerInput array is empty", () => {
+        expect(gameConfig.playerInput.length).toBe(0);
+    });
+    test("patternCount initial value is correct", () => {
+        expect(gameConfig.patternCount).toBe(3);
+    });
+    test("lightTime initial value is correct", () => {
+        expect(gameConfig.lightTime).toBe(400);
+    });
+    test("turnTime initial value is correct", () => {
+        expect(gameConfig.turnTime).toBe(800);
+    });
+    test("turnCount initial value is correct", () => {
+        expect(gameConfig.turnCount).toBe(1);
+    });
+    test("lastButton is empty", () => {
+        expect(gameConfig.lastButton).toBe("");
+    });
+    test("turnInProgress is false", () => {
+        expect(gameConfig.turnInProgress).toBe(false);
+    });
+});
+
 describe("newGame is functioning properly", () => {
     beforeAll(() => {
         gameConfig.score = 25;
@@ -78,6 +111,9 @@ describe("newGame is functioning properly", () => {
     });
     test("time between flashes should be reset", () => {
         expect(gameConfig.turnTime).toEqual(800);
+    });
+    test("turn counter should be reset", () => {
+        expect(gameConfig.turnCount).toEqual(1);
     });
 });
 
@@ -106,4 +142,4 @@ describe("gameplay is functioning properly", () => {
     test("turnTime should be reduced by 100", () => {
         expect(gameConfig.turnTime).toEqual(300);
     });
-})
+});
