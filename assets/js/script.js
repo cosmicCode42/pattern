@@ -1,4 +1,6 @@
 const listOfNodes = Array.from(document.querySelectorAll('.node'));
+const highScore = document.querySelector('#highscore');
+const maxLength = document.querySelector('#maxlength');
 
 /**
  * The game's settings.
@@ -143,12 +145,19 @@ const playerTurn = () => {
     if (gameConfig.currentPat[i] === gameConfig.playerInput[i] ){
         if (gameConfig.currentPat.length === gameConfig.playerInput.length) {
             gameConfig.turnCount++;
+            gameConfig.score++;
             lengthUp();
             speedUp();
             nextTurn();
         };
     } else {
         alert("BZZT. From the top.");
+        if (highScore.innerHTML < gameConfig.score) {
+            highScore.innerHTML = gameConfig.score;
+        };
+        if (maxLength.innerHTML < gameConfig.patternCount) {
+            maxLength.innerHTML = gameConfig.patternCount;
+        };
         gameReset();
         // we want code to resummon the start button.
     };
