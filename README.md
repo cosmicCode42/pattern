@@ -110,8 +110,8 @@ As a user of the site, I want:
 		- **Solution:** ``playerInput`` and ``currentPat`` are keys in the ``gameStuff`` object, which I wasn't actually keeping in mind. Changed code to reset ``gameStuff.playerInput`` and ``gameStuff.currentPat``.
 - **Problem:** The pattern could sometimes be hard to follow visually.
 	- **Solution:** I had added a ``:hover`` CSS rule to have the buttons light up when the mouse is over them, but this could get in the way of the actual pattern being displayed. I removed that particular rule, and increased the contrast between buttons lighting up and not (by reducing their opacity further) for good measure.
-- **Problem:** Jest does not recognise jQuery syntax.
-	- **Solution:** Stil working on this. Apparently I have to install jQuery separately using ``npm``, which is annoying.
+- **Problem:** The high score and maximum pattern length were not being updated.
+	- **Solution:** These are supposed to update once the player has made an error and has to start over. The code that updated these displays was erroneously placed after the ``gameReset`` call, putting relevant stats at 0. Shifting ``gameReset`` to the bottom fixed this issue.
 
 ## Deployment
 Deploy to GitHub Pages or a similar website hosting and rendering service. The html files can also be opened from local storage (this requires downloading all files in a dedicated folder; this can be done with the git pull command).
