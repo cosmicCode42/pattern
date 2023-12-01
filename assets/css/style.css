@@ -7,7 +7,19 @@ h1,h2,h3,h4,h5,h6 {
 
 .heading-container {
     position: static;
-    height: 50px;
+    height: 7rem;
+    width: 60%;
+    padding-left: 20%;
+}
+
+#hs-heading {
+    position: relative;
+    float: inline-start;
+}
+
+#ml-heading {
+    position: relative;
+    float: inline-end;
 }
 
 /* ---------------- buttons */
@@ -62,7 +74,7 @@ h1,h2,h3,h4,h5,h6 {
     height: 75px;
     border-radius: 50px;
     background-color: #808085;
-    left: 16%;
+    left: 42.5%;
     top: 30%;
 }
 
