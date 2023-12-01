@@ -29,18 +29,18 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .container {
-    height: 200px;
+    height: 11rem;
 }
 
 .start-container {
-    height: 100px;
+    height: 8rem;
 }
 
 .node, #start {
-    width: 200px;
-    height: 200px;
+    width: 11rem;
+    height: 11rem;
     border: 5px outset black;
-    border-radius: 100px;
+    border-radius: 6.5rem;
     position: relative;
     float: inline-start;
 }
@@ -56,7 +56,7 @@ h1,h2,h3,h4,h5,h6 {
 
 #button-yellow {
     background-color: #ffff00;
-    left: 45%;
+    left: 50%;
 }
 
 #button-blue {
@@ -66,15 +66,15 @@ h1,h2,h3,h4,h5,h6 {
 
 #button-green {
     background-color: #008000;
-    left: 45%;
+    left: 50%;
 }
 
 #start {
-    width: 150px;
-    height: 75px;
-    border-radius: 50px;
+    width: 8rem;
+    height: 4rem;
+    border-radius: 3rem;
     background-color: #808085;
-    left: 42.5%;
+    left: 45%;
     top: 30%;
 }
 
