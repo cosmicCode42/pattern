@@ -137,7 +137,8 @@ const speedUp = () => {
 
 /**
  * Checks player's input against the current pattern, continue (incrementing
- * turn counter) on success, and abort (restart) on failure.
+ * turn counter) on success, and abort (restart) on failure. Also changes
+ * high score and display of max pattern length reached.
  */
 const playerTurn = () => {
 
