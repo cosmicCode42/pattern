@@ -39,7 +39,7 @@ h1,h2,h3,h4,h5,h6 {
 .node, #start {
     width: 11rem;
     height: 11rem;
-    border: 5px outset black;
+    border: 5px outset #000000;
     border-radius: 6.5rem;
     position: relative;
     float: inline-start;
@@ -85,7 +85,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .clicked {
-    border: 5px inset black;
+    border: 5px inset #000000;
 }
 
 /* ---------------- resizing on different screen sizes */
