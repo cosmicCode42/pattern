@@ -17,18 +17,49 @@ Second Milestone Project for the Web Development course offered by Code Institut
 **Technologies Used:** HTML5, CSS3, JavaScript.
 
 ## UX
-...
 
 ### Project Goals
 
+This is a simple pattern game in which a pattern flashes across 4 bottons on the screen, which the player must correctly replicate. The length of the pattern and the speed at which the pattern flashes increases as time goes on. If the player does not input the correct sequence, the game ends and they must start over.
+
+### User Goals
+
+- Simple design.
+- Visually appealing.
+- Interactive controls.
+- Intuitive gameplay.
+
 ### User Stories
 
+I want:
+
+- a functioning game interface.
+- an intuitive game interface.
+- a game interface that's easy to look at.
+- a game whose rules are easy to understand.
+- a clear indication of when I have made a mistake.
+- a way to track my longest run.
+<!-- - a way to change the difficulty of the game? -->
+
 ### Design Choices
+
+To be added when the site is properly coded.
+
+#### Interface
+I intend to use a simple webpage consisting of 4 game buttons of different colours and a start button, as well as a high score display and longest pattern display.
+
+#### Colours
+![Palette](assets/images/pattern-palette.png)
 
 ## Planning
 
 ### Wireframes
-![Wireframe](assets/images/pattern-wireframe-2.png)
+![Wireframe](assets/images/pattern-wireframe.png)
+
+## Future Additions
+- A way to change the effective difficulty (speed of flashes and time between flashes)
+- A way to adjust the minimum and maximum pattern length
+- Possible colour changes for the buttons
 
 ## Testing
 
@@ -50,16 +81,23 @@ In order to make sure the site renders acceptably across several screen sizes, I
 ### User Stories Testing
 
 As a user of the site, I want: 
-- A site and interface that is intuitive, convenient and easy to navigate.
-	- Test that all links lead to the proper places (character icons link to correct character pages, as do navbar links).
-	- Test that the character icons lighten when the mouse hovers over them.
-	- Ensure that the fixed-top navbar isn't clipping down into the main sections in its default position.
-- Information that is easy to find and understand, and laid out in a pleasing manner.
-	- Ensure that the images and text look acceptable and are spaced well on variable screen sizes.
-	- Ensure that all content is centred in easily identifiable sections.
-- Additional media (such as character portraits) to give me a better idea of the characters.
-	- Test that character images are positioned well on variables screen sizes.
-	- Test that stat bars are positioned well on variable screen sizes. -->
+- an intuitive game interface.
+	-
+	-
+	-
+- a game interface that's easy to look at.
+	-
+	-
+	-
+- a game whose rules are easy to understand.
+	-
+	-
+- a clear indication of when I have made a mistake.
+	-
+	-
+	-
+- a way to track my longest run.
+	-  -->
 
 ### Bugfixes
 - **Problem:** There was a mass of unneeded whitespace at the bottom of the page.
