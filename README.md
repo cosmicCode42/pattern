@@ -3,16 +3,18 @@
 Second Milestone Project for the Web Development course offered by Code Institute. A simple memory game coded with JavaScript.
 
 ## Table of Contents
-<!-- 1. [UX](#ux)
+1. [UX](#ux)
 	- [Project Goals](#project-goals)
+	- [User Goals](#user-goals)
 	- [User Stories](#user-stories)
 	- [Design Choices](#design-choices)
 2. [Planning](#planning)
+	- [Wireframes](#wireframes)
 3. [Future Additions](#future-additions)
 4. [Testing](#testing)
 	- [Bugfixes](#bugfixes)
 5. [Deployment](#deployment)
-6. [Credit](#credit) -->
+6. [Credit](#credit)
 
 **Technologies Used:** HTML5, CSS3, JavaScript.
 
