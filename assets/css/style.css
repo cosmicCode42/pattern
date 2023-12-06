@@ -49,24 +49,28 @@ h1,h2,h3,h4,h5,h6 {
     opacity: 0.85;
 }
 
+.button-left {
+    left: 25%;
+}
+
+.button-right {
+    left: 50%;
+}
+
 #button-red {
     background-color: #ff0000;
-    left: 25%;
 }
 
 #button-yellow {
     background-color: #ffff00;
-    left: 50%;
 }
 
 #button-blue {
     background-color: #1b1bf7;
-    left: 25%;
 }
 
 #button-green {
     background-color: #008000;
-    left: 50%;
 }
 
 #start {
