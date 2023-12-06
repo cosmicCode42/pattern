@@ -41,7 +41,6 @@ I want:
 - a game whose rules are easy to understand.
 - a clear indication of when I have made a mistake.
 - a way to track my longest run.
-<!-- - a way to change the difficulty of the game? -->
 
 ### Design Choices
 
@@ -56,6 +55,7 @@ I intend to use a simple webpage consisting of 4 game buttons of different colou
 ## Planning
 
 ### Wireframes
+I have used MS Paint to sketch out a basic wireframe for the site:
 ![Wireframe](assets/images/pattern-wireframe.png)
 
 ## Future Additions
@@ -65,12 +65,12 @@ I intend to use a simple webpage consisting of 4 game buttons of different colou
 
 ## Testing
 
-<!-- The site has been tested extensively to ensure the best user experience across multiple screen sizes.
-
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input)
 - [W3C Markup Validation](https://validator.w3.org/#validate_by_input)
 
 The developer used **W3C CSS Validation Service** and **W3C Markup Validation Service** to check the validity of the website code.
+
+<!-- The site has been tested extensively to ensure the best user experience across multiple screen sizes.
 
 ### Testing Process
 
