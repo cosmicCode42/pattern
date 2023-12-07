@@ -50,13 +50,13 @@ To be added when the site is properly coded.
 I intend to use a simple webpage consisting of 4 game buttons of different colours and a start button, as well as a high score display and longest pattern display.
 
 #### Colours
-![Palette](assets/images/pattern-palette.png)
+![Palette](docs/pattern-palette.png)
 
 ## Planning
 
 ### Wireframes
 I have used MS Paint to sketch out a basic wireframe for the site:
-![Wireframe](assets/images/pattern-wireframe.png)
+![Wireframe](docs/pattern-wireframe.png)
 
 ## Future Additions
 - A way to change the effective difficulty (speed of flashes and time between flashes)
@@ -119,7 +119,7 @@ Deploy to GitHub Pages or a similar website hosting and rendering service. The h
 To deploy this site to GitHub Pages from [its GitHub repository](https://github.com/cosmicCode42/pattern-MP2), the following steps were taken.
 
 1. Log in to GitHub.
-2. From the list of repositories on the screen, select **cosmicCode42/Armings-Fellowship-MP1**. (The above link leads straight to the repository in question.)
+2. From the list of repositories on the screen, select **cosmicCode42/pattern-MP2**. (The above link leads straight to the repository in question.)
 3. Select **Settings** from the menu items near the top of the page.
 4. From the left sidebar, select **Pages**.
 5. Under **Build and Deployment** select **Deploy from a branch** as the Source and **main** as the branch.
