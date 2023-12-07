@@ -1,6 +1,6 @@
 const listOfNodes = Array.from(document.querySelectorAll('.node'));
-const highScore = document.querySelector('#highscore');
-const maxLength = document.querySelector('#maxlength');
+const highScoreRef = document.querySelector('#highscore');
+const maxLengthRef = document.querySelector('#maxlength');
 
 /**
  * The game's settings.
@@ -38,7 +38,7 @@ const newGame = () => {
     // we want to hide the Start Game button after clicking it. That code will go here.
 
     // start the game. This entire part was copied from the Simon game codealong challenge () and edited for my purposes.
-    for (let node of listOfNodes) {
+    for (const node of listOfNodes) {
         if (node.getAttribute("data-listener") !== "true") {
             node.addEventListener("click", (e) => {
                 if (gameConfig.currentPat.length > 0 && !gameConfig.turnInProgress) {
@@ -64,7 +64,7 @@ const nextTurn = () => {
     gameConfig.playerInput = [];
     gameConfig.currentPat = [];
 
-    for (let n = 0; n < gameConfig.patternCount; n++) {
+    for (let patternCount = 0; patternCount < gameConfig.patternCount; patternCount++) {
         let patternBit = Math.floor(Math.random() * gameConfig.buttons.length);
         gameConfig.currentPat.push(gameConfig.buttons[patternBit]);
     };
@@ -73,14 +73,14 @@ const nextTurn = () => {
 };
 
 /**
- * Causes buttons to light up during play.
- * @param node ID of the button lighting up.
+ * Has each button react to being clicked. Also causes buttons to light up during play.
+ * @param node The ID of the button being clicked.
  */
-const lightUp = node => {
-    document.getElementById(node).classList.add("light", "clicked");
+const clickNode = (node, time = 150) => {
+    document.querySelector(`#${node}`).classList.add("light", "clicked");
     setTimeout(() => {
-        document.getElementById(node).classList.remove("light", "clicked");
-    }, gameConfig.lightTime);
+        document.querySelector(`#${node}`).classList.remove("light", "clicked");
+    }, time);
 };
 
 /**
@@ -90,24 +90,13 @@ const showTurn = () => {
     gameConfig.turnInProgress = true;
     let seqPlace = 0;
     let sequence = setInterval(() => {
-        lightUp(gameConfig.currentPat[seqPlace]);
+        clickNode(gameConfig.currentPat[seqPlace], gameConfig.lightTime);
         seqPlace++;
         if (seqPlace >= gameConfig.currentPat.length) {
             clearInterval(sequence);
             gameConfig.turnInProgress = false;
         };
     }, gameConfig.turnTime);
-};
-
-/**
- * Has each button react to being clicked.
- * @param node The ID of the button being clicked.
- */
-const clickNode = node => {
-    document.getElementById(node).classList.add("light", "clicked");
-    setTimeout(() => {
-        document.getElementById(node).classList.remove("light", "clicked");
-    }, 150);
 };
 
 /**
@@ -153,11 +142,11 @@ const playerTurn = () => {
         };
     } else {
         alert("BZZT. From the top.");
-        if (highScore.innerHTML < gameConfig.score) {
-            highScore.innerHTML = gameConfig.score;
+        if (highScoreRef.innerHTML < gameConfig.score) {
+            highScoreRef.innerHTML = gameConfig.score;
         };
-        if (maxLength.innerHTML < gameConfig.patternCount) {
-            maxLength.innerHTML = gameConfig.patternCount;
+        if (maxLengthRef.innerHTML < gameConfig.patternCount) {
+            maxLengthRef.innerHTML = gameConfig.patternCount;
         };
         gameReset();
         // we want code to resummon the start button.
@@ -173,4 +162,4 @@ module.exports = {
     lengthUp,
     speedUp,
     playerTurn
-}; // testing, testing...
+};
