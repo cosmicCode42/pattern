@@ -126,7 +126,7 @@ describe("gameplay is functioning properly", () => {
         gameConfig.turnTime = 400;
         gameConfig.turnCount = 27;
         playerTurn(); 
-    }); // this should check that both speedUp and lengthUp are working; 28 is a multiple of 4 and 7.
+    });
     test("turnCount should be incremented", () => {
         expect(gameConfig.turnCount).toEqual(28);
     });
