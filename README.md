@@ -51,6 +51,11 @@ I intend to use a simple webpage consisting of 4 game buttons of different colou
 
 #### Colours
 ![Palette](docs/pattern-palette.png)
+- `#FF0000` is used for the red button.
+- `#FFFF00` is used for the yellow button.
+- `#1B1BF7` is used for the blue button.
+- `#008000` is used for the green button.
+- `#808085` is used for the game start button.
 
 ## Planning
 
