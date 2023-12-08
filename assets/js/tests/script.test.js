@@ -143,3 +143,19 @@ describe("gameplay is functioning properly", () => {
         expect(gameConfig.turnTime).toEqual(300);
     });
 });
+
+describe("scores are updating properly", () => {
+    beforeAll(() => {
+        gameConfig.patternCount = 7;
+        gameConfig.currentPat = [4, 6, 1, 7, 2, 3, 5];
+        gameConfig.playerInput = [4, 6, 1, 7, 2, 3, 2];
+        gameConfig.score = 27;
+    });
+    test("high score is correctly updated", () => {
+        playerTurn(); 
+        expect(document.querySelector('#highscore').innerHTML).toBe("27");
+    });
+    test("max length is correctly updated", () => {
+        expect(document.querySelector('#maxlength').innerHTML).toBe("7");
+    });
+});
