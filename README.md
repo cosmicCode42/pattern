@@ -18,6 +18,8 @@ Second Milestone Project for the Web Development course offered by Code Institut
 
 **Technologies Used:** HTML5, CSS3, JavaScript.
 
+**Testing Technologies Used:** Jest.
+
 ## UX
 
 ### Project Goals
@@ -44,10 +46,16 @@ I want:
 
 ### Design Choices
 
-To be added when the site is properly coded.
-
 #### Interface
-I intend to use a simple webpage consisting of 4 game buttons of different colours and a start button, as well as a high score display and longest pattern display.
+*Pattern* is built as a simple one-page website consisting of 4 game buttons of different colours and a start button, as well as a high score display and longest pattern display.
+
+![Pattern home page.](docs/pattern-page-display.png)
+
+The site shifts to accommodate several screen sizes while keeping the same basic layout.
+
+![Tablet screen, 768px wide.](docs/pattern-tablet-display.png)
+
+![Mobile screen, 425px wide.](docs/pattern-mobile-l-display.png)
 
 #### Colours
 ![Palette](docs/pattern-palette.png)
@@ -70,41 +78,42 @@ I have used MS Paint to sketch out a basic wireframe for the site:
 
 ## Testing
 
+The site has been tested extensively to ensure the best user experience across multiple screen sizes.
+
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input)
 - [W3C Markup Validation](https://validator.w3.org/#validate_by_input)
 
 The developer used **W3C CSS Validation Service** and **W3C Markup Validation Service** to check the validity of the website code.
 
-<!-- The site has been tested extensively to ensure the best user experience across multiple screen sizes.
-
 ### Testing Process
 
-In order to make sure the site renders acceptably across several screen sizes, I made liberal use of the DevTools offered by Google Chrome (or in my case, the Opera GX browser that closely mimics Chrome) as well as testing load times of each page, mobile and desktop, with the Lighthouse Chrome extension.
-
-![Testing main page desktop version.](assets/images/readme/lighthouse_test_main_desktop.png)
-
-![Testing main page mobile version.](assets/images/readme/lighthouse_test_main_mobile.png)
+In order to make sure the site renders acceptably across several screen sizes, I made liberal use of the DevTools offered by Google Chrome.
 
 ### User Stories Testing
 
 As a user of the site, I want: 
 - an intuitive game interface.
-	-
-	-
-	-
+	- Ensured that buttons respond to being clicked.
+	- Ensured that buttons can only be pressed when the pattern isn't being displayed.
 - a game interface that's easy to look at.
-	-
-	-
-	-
+	- Subjective, but I believe the simple multicoloured buttons set against a white background is easy to look at and keeps player attention on the game itself.
 - a game whose rules are easy to understand.
-	-
-	-
+	- The game simply requires that the player click the buttons in the order of the pattern they are shown.
 - a clear indication of when I have made a mistake.
-	-
-	-
-	-
+	- Tested that game stops when player makes a mistake.
+	- Tested that the player is alerted when a mistake has been made and the game is reset properly.
 - a way to track my longest run.
-	-  -->
+	- Tested that 
+
+<!-- 
+
+ (or in my case, the Opera GX browser that closely mimics Chrome) as well as testing load times of each page, mobile and desktop, with the Lighthouse Chrome extension.
+
+![Testing main page desktop version.](assets/images/readme/lighthouse_test_main_desktop.png)
+
+![Testing main page mobile version.](assets/images/readme/lighthouse_test_main_mobile.png)
+
+  -->
 
 ### Bugfixes
 - **Problem:** There was a mass of unneeded whitespace at the bottom of the page.
@@ -164,3 +173,7 @@ Then follow these steps:
 ### Code
 
 Code not written by me and not covered below is attributed to proper sources in comments within the code. All other code is written by me.
+
+#### Guidance and Inspiration
+
+[Simen Daehlin](https://github.com/Eventyret "Simen Daehlin")
