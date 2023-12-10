@@ -35,7 +35,7 @@ const newGame = () => {
 
     gameReset();
 
-    // we want to hide the Start Game button after clicking it. That code will go here.
+    document.querySelector('#start').classList.add("hide");
 
     // start the game. This entire part was copied from the Simon game codealong challenge () and edited for my purposes.
     for (const node of listOfNodes) {
@@ -150,7 +150,7 @@ const playerTurn = () => {
             document.querySelector('#maxlength').innerHTML = gameConfig.patternCount;
         };
         gameReset();
-        // we want code to resummon the start button.
+        document.querySelector('#start').classList.remove("hide");
     };
 };
 

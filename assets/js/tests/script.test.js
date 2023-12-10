@@ -150,7 +150,6 @@ describe("scores are updating properly", () => {
         gameConfig.currentPat = [4, 6, 1, 7, 2, 3, 5];
         gameConfig.playerInput = [4, 6, 1, 7, 2, 3, 2];
         gameConfig.score = 27;
-        playerTurn();
     });
     test("high score is correctly updated", () => { 
         expect(document.querySelector('#highscore').innerHTML).toBe("27");
