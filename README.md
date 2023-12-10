@@ -83,11 +83,13 @@ The site has been tested extensively to ensure the best user experience across m
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input)
 - [W3C Markup Validation](https://validator.w3.org/#validate_by_input)
 
-The developer used **W3C CSS Validation Service** and **W3C Markup Validation Service** to check the validity of the website code.
+The developer used **W3C CSS Validation Service** and **W3C Markup Validation Service** to check the validity of the website code. Jest was also used to test core functionalities in and spot errors in the JavaScript code, along with manual testing; ``script.test.js`` contains the tests written for this purpose, and Jest is installed so that these tests can still be run.
 
 ### Testing Process
 
 In order to make sure the site renders acceptably across several screen sizes, I made liberal use of the DevTools offered by Google Chrome.
+
+When writing my JavaScript, I used a mix of manual and automated testing; I wrote sections of code and wrote tests for their functionality. This helped me in troubleshooting parts of the code that didn't work as expected. I also manually tested the site to catch errors that I would have missed with pure automated testing. For instance, I discovered the second problem in the Bugfixes section by manually testing the site (this can be attributed to a poor test being written in the first place; this has since been corrected).
 
 ### User Stories Testing
 
