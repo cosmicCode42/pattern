@@ -37,7 +37,9 @@ const newGame = () => {
 
     document.querySelector('#start').classList.add("hide");
 
-    // start the game. This entire part was copied from the Simon game codealong challenge () and edited for my purposes.
+    /* start the game. This entire loop was copied from the Simon game codealong challenge 
+    (https://github.com/Code-Institute-Solutions/Jest_Testing_Part2/blob/main/09_Final_Codealong_2/scripts/game.js) 
+    and edited for my purposes. */
     for (const node of listOfNodes) {
         if (node.getAttribute("data-listener") !== "true") {
             node.addEventListener("click", (e) => {
@@ -122,7 +124,9 @@ const speedUp = () => {
     };
 };
 
-// the base code of playerTurn() was copied from the Simon codealong challenge () and edited for my purposes.
+/* the base structure of playerTurn() was copied from the Simon game codealong challenge 
+    (https://github.com/Code-Institute-Solutions/Jest_Testing_Part2/blob/main/09_Final_Codealong_2/scripts/game.js) 
+    and edited for my purposes. */
 
 /**
  * Checks player's input against the current pattern, continue (incrementing
