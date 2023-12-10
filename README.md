@@ -103,7 +103,8 @@ As a user of the site, I want:
 	- Tested that game stops when player makes a mistake.
 	- Tested that the player is alerted when a mistake has been made and the game is reset properly.
 - a way to track my longest run.
-	- Tested that 
+	- Tested that high score (longest run) and max pattern length are displayed upon game-over.
+	- Tested that worse subsequent runs do not override the high score displays.
 
 <!-- 
 
