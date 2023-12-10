@@ -1,4 +1,6 @@
 const listOfNodes = Array.from(document.querySelectorAll('.node'));
+// const highScoreRef = document.querySelector('#highscore');
+// const maxLengthRef = document.querySelector('#maxlength');
 
 /**
  * The game's settings.
@@ -140,15 +142,12 @@ const playerTurn = () => {
         };
     } else {
         alert("BZZT. From the top.");
-
-        const highScoreRef = document.querySelector('#highscore');
-        const maxLengthRef = document.querySelector('#maxlength');
         
-        if (highScoreRef.innerHTML < gameConfig.score) {
-            highScoreRef.innerHTML = gameConfig.score;
+        if (document.querySelector('#highscore').innerHTML < gameConfig.score) {
+            document.querySelector('#highscore').innerHTML = gameConfig.score;
         };
-        if (maxLengthRef.innerHTML < gameConfig.patternCount) {
-            maxLengthRef.innerHTML = gameConfig.patternCount;
+        if (document.querySelector('#maxlength').innerHTML < gameConfig.patternCount) {
+            document.querySelector('#maxlength').innerHTML = gameConfig.patternCount;
         };
         gameReset();
         // we want code to resummon the start button.
