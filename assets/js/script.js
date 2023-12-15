@@ -77,6 +77,7 @@ const nextTurn = () => {
 /**
  * Has each button react to being clicked. Also causes buttons to light up during play.
  * @param node The ID of the button being clicked.
+ * @param time Time in milliseconds to wait.
  */
 const clickNode = (node, time = 150) => {
     document.querySelector(`#${node}`).classList.add("light", "clicked");
