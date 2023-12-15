@@ -35,14 +35,12 @@ This is a simple pattern game in which a pattern flashes across 4 bottons on the
 
 ### User Stories
 
-I want:
-
-- a functioning game interface.
-- an intuitive game interface.
-- a game interface that's easy to look at.
-- a game whose rules are easy to understand.
-- a clear indication of when I have made a mistake.
-- a way to track my longest run.
+- As a user, I want a functioning game interface.
+- As a user, I want an intuitive game interface.
+- As a user, I want a game interface that's easy to look at.
+- As a user, I want a game whose rules are easy to understand.
+- As a user, I want a clear indication of when I have made a mistake.
+- As a user, I want a way to track my longest run.
 
 ### Design Choices
 
