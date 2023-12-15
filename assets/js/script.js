@@ -31,6 +31,9 @@ const gameReset = () => {
     gameConfig.currentPat = [];
 };
 
+/**
+ * Starts a new game.
+ */
 const newGame = () => {
 
     gameReset();
