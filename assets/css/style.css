@@ -6,10 +6,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .heading-container {
-    position: static;
-    height: 7rem;
-    width: 60%;
-    padding-left: 20%;
+    display: flex;
+	justify-content: space-around;
 }
 
 #hs-heading {
