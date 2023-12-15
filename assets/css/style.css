@@ -1,4 +1,4 @@
-/* ---------------- headers */
+/* headers */
 
 h1,h2,h3,h4,h5,h6 {
     text-align: center;
@@ -10,28 +10,15 @@ h1,h2,h3,h4,h5,h6 {
 	justify-content: space-around;
 }
 
-#hs-heading {
-    position: relative;
-    float: inline-start;
-}
-
-#ml-heading {
-    position: relative;
-    float: inline-end;
-}
-
-/* ---------------- buttons */
+/*  buttons */
 
 .container, .start-container {
-    position: static;
+    display: flex;
+	justify-content: space-around;
 }
 
-.container {
-    height: 11rem;
-}
-
-.start-container {
-    height: 8rem;
+.space {
+    height: 2rem;
 }
 
 .node, #start {
@@ -39,16 +26,6 @@ h1,h2,h3,h4,h5,h6 {
     height: 11rem;
     border: 5px outset #000000;
     border-radius: 6.5rem;
-    position: relative;
-    float: inline-start;
-}
-
-.button-left {
-    left: 25%;
-}
-
-.button-right {
-    left: 50%;
 }
 
 #button-red {
@@ -72,15 +49,14 @@ h1,h2,h3,h4,h5,h6 {
     height: 4rem;
     border-radius: 3rem;
     background-color: #808085;
-    left: 45%;
-    top: 30%;
+    top: 50%;
 }
 
 #start:hover  {
     opacity: 0.85;
 }
 
-/* ---------------- button reactiveness */
+/*  button reactiveness */
 
 .light {
     opacity: 0.35;
@@ -94,31 +70,9 @@ h1,h2,h3,h4,h5,h6 {
     visibility: hidden;
 }
 
-/* ---------------- responsive design for different screen sizes */
-
-@media screen and (max-width: 1024px) {
-    .button-left {
-        left: 20%;
-    }
-
-    .button-right {
-        left: 47.5%;
-    }
-
-    #start {
-        top: 25%;
-    }
-}
+/*  responsive design for different screen sizes */
 
 @media screen and (max-width: 768px) {
-
-    .container {
-        height: 8rem;
-    }
-    
-    .start-container {
-        height: 7rem;
-    }
 
     .node, #start {
         width: 8rem;
@@ -127,74 +81,13 @@ h1,h2,h3,h4,h5,h6 {
         border-radius: 4rem;
     }
 
-    .button-left {
-        left: 20%;
-    }
-
-    .button-right {
-        left: 45%;
-    }
-
     #start {
         height: 3rem;
-        top: 25%;
-        left: 40%;
     }
 }
 
 @media screen and (max-width: 426px) {
     h1,h2,h3,h4,h5,h6 {
         padding: 0rem;
-    }
-
-    .button-left {
-        left: 8%;
-    }
-
-    .button-right {
-        left: 30%;
-    }
-
-    #start {
-        left: 35%;
-    }
-}
-
-@media screen and (max-width: 376px) {
-
-    .button-left {
-        left: 4%;
-    }
-
-    .button-right {
-        left: 24%;
-    }
-
-    #start {
-        left: 32.5%;
-    }
-}
-
-@media screen and (max-width: 321px) {
-
-    h4 {
-        font-size: 0.9rem;
-    }
-
-    .heading-container {
-        height: 6rem;
-        padding-left: 18%;
-    }
-
-    .button-left {
-        left: 1%;
-    }
-
-    .button-right {
-        left: 15%;
-    }
-
-    #start {
-        left: 28.5%;
     }
 }
