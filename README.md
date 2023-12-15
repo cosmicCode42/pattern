@@ -13,12 +13,9 @@ Second Milestone Project for the Web Development course offered by Code Institut
 3. [Future Additions](#future-additions)
 4. [Testing](#testing)
 	- [Bugfixes](#bugfixes)
-5. [Deployment](#deployment)
-6. [Credit](#credit)
-
-**Technologies Used:** HTML5, CSS3, JavaScript.
-
-**Testing Technologies Used:** Jest.
+5. [Technologies Used](##technologies-used)
+6. [Deployment](#deployment)
+7. [Credit](#credit)
 
 ## UX
 
@@ -127,6 +124,16 @@ As a user of the site, I want:
 	- **Solution:** I had added a ``:hover`` CSS rule to have the buttons light up when the mouse is over them, but this could get in the way of the actual pattern being displayed. I removed that particular rule, and increased the contrast between buttons lighting up and not (by reducing their opacity further) for good measure.
 - **Problem:** The high score and maximum pattern length were not being updated.
 	- **Solution:** These are supposed to update once the player has made an error and has to start over. The code that updated these displays was erroneously placed after the ``gameReset`` call, putting relevant stats at 0. Shifting ``gameReset`` to the bottom fixed this issue.
+
+## Technologies Used
+
+### Building
+- [HTML5](https://developer.mozilla.org/en-US/docs/Learn/HTML)
+- [CSS53](https://developer.mozilla.org/en-US/docs/Learn/CSS)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
+
+### Testing
+- [Jest](https://jestjs.io/)
 
 ## Deployment
 Deploy to GitHub Pages or a similar website hosting and rendering service. The html files can also be opened from local storage (this requires downloading all files in a dedicated folder; this can be done with the git pull command).
