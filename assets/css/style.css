@@ -89,7 +89,18 @@ h1,h2,h3,h4,h5,h6 {
 @media screen and (max-width: 431px) {
     .container {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
         align-items: center;
+    }
+
+    .node, #start {
+        width: 7rem;
+        height: 7rem;
+        border-width: 3px;
+        border-radius: 3.5rem;
+    }
+
+    #start {
+        height: 1.5rem;
     }
 }
