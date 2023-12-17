@@ -143,7 +143,7 @@ Deploy to GitHub Pages or a similar website hosting and rendering service. The h
 To deploy this site to GitHub Pages from [its GitHub repository](https://github.com/cosmicCode42/pattern-MP2), the following steps were taken.
 
 1. Log in to GitHub.
-2. From the list of repositories on the screen, select **cosmicCode42/pattern-MP2**. (The above link leads straight to the repository in question.)
+2. From the list of repositories on the screen, select **pattern-MP2**. (The above link leads straight to the repository in question.)
 3. Select **Settings** from the menu items near the top of the page.
 4. From the left sidebar, select **Pages**.
 5. Under **Build and Deployment** select **Deploy from a branch** as the Source and **main** as the branch.
