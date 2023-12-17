@@ -50,6 +50,8 @@ The site shifts to accommodate several screen sizes while keeping the same basic
 
 ![Tablet screen, 768px wide.](docs/pattern-tablet-display.png)
 
+On smaller screens, the buttons shift to a more vertical layout.
+
 ![Mobile screen, 425px wide.](docs/pattern-mobile-l-display.png)
 
 #### Colours
