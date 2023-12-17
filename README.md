@@ -13,7 +13,7 @@ Second Milestone Project for the Web Development course offered by Code Institut
 3. [Future Additions](#future-additions)
 4. [Testing](#testing)
 	- [Bugfixes](#bugfixes)
-5. [Technologies Used](##technologies-used)
+5. [Technologies Used](#technologies-used)
 6. [Deployment](#deployment)
 7. [Credit](#credit)
 
