@@ -77,10 +77,7 @@ I have used MS Paint to sketch out a basic wireframe for the site:
 
 The site has been tested extensively to ensure the best user experience across multiple screen sizes.
 
-- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input)
-- [W3C Markup Validation](https://validator.w3.org/#validate_by_input)
-
-The developer used **W3C CSS Validation Service** and **W3C Markup Validation Service** to check the validity of the website code. Jest was also used to test core functionalities in and spot errors in the JavaScript code, along with manual testing; ``script.test.js`` contains the tests written for this purpose, and Jest is installed so that these tests can still be run.
+The developer used **W3C CSS Validation Service** and **W3C Markup Validation Service** to check the validity of the HTML and CSS, and **JSHint** to check the validity of the JavaScript. Jest was also used to test core functionalities in and spot errors in the JavaScript code, along with manual testing; ``script.test.js`` contains the tests written for this purpose, and Jest is installed so that these tests can still be run.
 
 ### Testing Process
 
@@ -137,6 +134,11 @@ As a user of the site, I want:
 ### Testing
 - [Jest](https://jestjs.io/)
 
+### Validation
+- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input)
+- [W3C Markup Validation](https://validator.w3.org/#validate_by_input)
+- [JSHint](https://jshint.com/)
+
 ## Deployment
 Deploy to GitHub Pages or a similar website hosting and rendering service. The html files can also be opened from local storage (this requires downloading all files in a dedicated folder; this can be done with the git pull command).
 
@@ -177,6 +179,12 @@ Then follow these steps:
 3. Log into [GitPod](https://www.gitpod.io) with your GitHub account.
 4. Navigate into the [Project GitHub repository](https://github.com/cosmicCode42/pattern-MP2).
 5. Click the green **GitPod** button in the top right corner of the repository. This will trigger a new GitPod workspace to be created from the code in GitHub where you can work normally.
+
+### Installing Jest
+
+To install Jest, follow [these instructions](https://jestjs.io/docs/getting-started). The test file and settings are available within the repository; no further setup should be required to get the tests working.
+
+To run the automated tests, use ``npm test`` or ``npm t``.
 
 ## Credit
 
