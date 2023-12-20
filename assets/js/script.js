@@ -1,6 +1,4 @@
 const listOfNodes = Array.from(document.querySelectorAll('.node'));
-// const highScoreRef = document.querySelector('#highscore');
-// const maxLengthRef = document.querySelector('#maxlength');
 
 /**
  * The game's settings.
@@ -47,17 +45,16 @@ const newGame = () => {
         if (node.getAttribute("data-listener") !== "true") {
             node.addEventListener("click", (e) => {
                 if (gameConfig.currentPat.length > 0 && !gameConfig.turnInProgress) {
-                //makes sure a game has started and the computer's turn is not in progress
                     let move = e.target.getAttribute("id");
                     gameConfig.lastButton = move;
                     clickNode(move);
                     gameConfig.playerInput.push(move);
                     playerTurn();
-                };
+                }
             });
             node.setAttribute("data-listener", "true");
-        };
-    };
+        }
+    }
     nextTurn();
 };
 
@@ -72,7 +69,7 @@ const nextTurn = () => {
     for (let patternCount = 0; patternCount < gameConfig.patternCount; patternCount++) {
         let patternBit = Math.floor(Math.random() * gameConfig.buttons.length);
         gameConfig.currentPat.push(gameConfig.buttons[patternBit]);
-    };
+    }
 
     showTurn();
 };
@@ -101,7 +98,7 @@ const showTurn = () => {
         if (seqPlace >= gameConfig.currentPat.length) {
             clearInterval(sequence);
             gameConfig.turnInProgress = false;
-        };
+        }
     }, gameConfig.turnTime);
 };
 
@@ -111,7 +108,7 @@ const showTurn = () => {
 const lengthUp = () => {
     if (gameConfig.turnCount % 4 === 0 && gameConfig.patternCount < 8) {
         gameConfig.patternCount++;
-    };
+    }
 };
 
 /**
@@ -121,11 +118,11 @@ const speedUp = () => {
     if (gameConfig.turnCount % 7 === 0) {
         if (gameConfig.lightTime > 100) {
             gameConfig.lightTime = gameConfig.lightTime - 50;
-        };
+        }
         if (gameConfig.turnTime > 200) {
             gameConfig.turnTime = gameConfig.turnTime - 100;
-        };
-    };
+        }
+    }
 };
 
 /* the base structure of playerTurn() was copied from the Simon game codealong challenge 
@@ -147,19 +144,19 @@ const playerTurn = () => {
             lengthUp();
             speedUp();
             nextTurn();
-        };
+        }
     } else {
         alert("BZZT. From the top.");
         
         if (document.querySelector('#highscore').innerHTML < gameConfig.score) {
             document.querySelector('#highscore').innerHTML = gameConfig.score;
-        };
+        }
         if (document.querySelector('#maxlength').innerHTML < gameConfig.patternCount) {
             document.querySelector('#maxlength').innerHTML = gameConfig.patternCount;
-        };
+        }
         gameReset();
         document.querySelector('#start').classList.remove("hide");
-    };
+    }
 };
 
 module.exports = {
