@@ -50,9 +50,23 @@ The site shifts to accommodate several screen sizes while keeping the same basic
 
 ![Tablet screen, 768px wide.](docs/pattern-tablet-display.png)
 
+When the player starts the game, the start button is removed, and a pattern flashes on the screen.
+
+![Snapshot of desktop/tablet game in progress.](docs/pattern-page-game-in-progress.png)
+
+Once a pattern is finished, the player must press the buttons in the order displayed. If the player does not do so, the game ends, and a popup on the screen informs the player of this.
+
+![Game over...](docs/pattern-page-game-over.png)
+
+![Game over on iPad Air.](docs/pattern-tablet-game-over.png)
+
 On smaller screens, the buttons shift to a more vertical layout.
 
 ![Mobile screen, 425px wide.](docs/pattern-mobile-l-display.png)
+
+![Snapshot of mobile game in progress.](docs/pattern-mobile-l-game-in-progress.png)
+
+(I do not possess a screen small enough to get a mobile snapshot of the game over screen, unfortunately.)
 
 #### Colours
 ![Palette](docs/pattern-palette.png)
