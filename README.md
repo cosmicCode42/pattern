@@ -95,7 +95,11 @@ The developer used **W3C CSS Validation Service** and **W3C Markup Validation Se
 
 ### Testing Process
 
-In order to make sure the site renders acceptably across several screen sizes, I made liberal use of the DevTools offered by Google Chrome.
+In order to make sure the site renders acceptably across several screen sizes, I made liberal use of the DevTools offered by Google Chrome, as well as testing load times, mobile and desktop, with the Lighthouse Chrome extension.
+
+![Testing main page desktop version.](docs/lighthouse-test-desktop.png)
+
+![Testing main page mobile version.](docs/lighthouse-test-mobile.png)
 
 When writing my JavaScript, I used a mix of manual and automated testing; I wrote sections of code and wrote tests for their functionality. This helped me in troubleshooting parts of the code that didn't work as expected. I also manually tested the site to catch errors that I would have missed with pure automated testing. For instance, I discovered the second problem in the Bugfixes section by manually testing the site (this can be attributed to a poor test being written in the first place; this has since been corrected).
 
@@ -115,16 +119,7 @@ As a user of the site, I want:
 - a way to track my longest run.
 	- Tested that high score (longest run) and max pattern length are displayed upon game-over.
 	- Tested that worse subsequent runs do not override the high score displays.
-
-<!-- 
-
- (or in my case, the Opera GX browser that closely mimics Chrome) as well as testing load times of each page, mobile and desktop, with the Lighthouse Chrome extension.
-
-![Testing main page desktop version.](assets/images/readme/lighthouse_test_main_desktop.png)
-
-![Testing main page mobile version.](assets/images/readme/lighthouse_test_main_mobile.png)
-
-  -->
+	- Tested that high score displays persist between refreshes.
 
 ### Bugfixes
 - **Problem:** There was a mass of unneeded whitespace at the bottom of the page.
@@ -137,6 +132,10 @@ As a user of the site, I want:
 	- **Solution:** I had added a ``:hover`` CSS rule to have the buttons light up when the mouse is over them, but this could get in the way of the actual pattern being displayed. I removed that particular rule, and increased the contrast between buttons lighting up and not (by reducing their opacity further) for good measure.
 - **Problem:** The high score and maximum pattern length were not being updated.
 	- **Solution:** These are supposed to update once the player has made an error and has to start over. The code that updated these displays was erroneously placed after the ``gameReset`` call, putting relevant stats at 0. Shifting ``gameReset`` to the bottom fixed this issue.
+- **Problem:** The high score and maximum pattern length did not persist between browser refreshes.
+	- **Solution:** I made use of `localStorage`, adding `highScore` and `maxLength` data items that could be referenced and loaded onto the page.
+	- **Problem:** The code I use returns a `TypeError: Cannot set properties of null (setting 'innerHTML)` when run through Jest. All tests fail; the test suite fails to run entirely.
+		- **Solution:** I created a new `score-script.js` file which handles the initial loading of the high score and max length as stored in `localStorage`. The rest of the code still works when manually tested, and all automated tests now pass again.
 
 ## Technologies Used
 
@@ -147,6 +146,7 @@ As a user of the site, I want:
 
 ### Testing
 - [Jest](https://jestjs.io/)
+- [Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk)
 
 ### Validation
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input)
