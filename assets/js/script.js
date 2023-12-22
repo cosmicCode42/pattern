@@ -149,10 +149,12 @@ const playerTurn = () => {
         alert("BZZT. From the top.");
         
         if (document.querySelector('#highscore').innerHTML < gameConfig.score) {
-            document.querySelector('#highscore').innerHTML = gameConfig.score;
+            localStorage.setItem("highScore", gameConfig.score);
+            document.querySelector('#highscore').innerHTML = localStorage.highScore;
         }
         if (document.querySelector('#maxlength').innerHTML < gameConfig.patternCount) {
-            document.querySelector('#maxlength').innerHTML = gameConfig.patternCount;
+            localStorage.setItem("maxLength", gameConfig.patternCount);
+            document.querySelector('#maxlength').innerHTML = localStorage.maxLength;
         }
         gameReset();
         document.querySelector('#start').classList.remove("hide");
